@@ -11,6 +11,7 @@ This project followed an iterative slice-based development approach where each m
 3. Semantic search foundation (April) enabled the document QA features (May)
 4. Document QA work (May) provided the basis for task engine development (June)
 5. Task engine maturity (June) allowed for demo application development (July)
+6. The MVP/demo application (July) unlocked extracting the core architecture for strategic pivot (August) as well as the deprecation of parts of the code-base.
 
 The approach proved effective for managing complexity, though some features (like the task engine design) required more iteration than initially anticipated. Future slices will focus on stabilizing the architecture while adding new capabilities.
 
@@ -59,11 +60,17 @@ The approach proved effective for managing complexity, though some features (lik
 - [x] Create and integrate a new Go SDK for service-to-service communication
 - [x] Improve model management to remove the hardcoded capabilities
 - [x] Address breaking changes from Ollama-APIs and model behavior
+- [x] Exanding E2E and compatibility testing
 - [x] Improving the llmrepo and model provider management
+- [x] ~~Implementing Workflow visualization and fixing UX issues~~ (*Deprecated*)
 - [x] Improving the llmresolver and fixing the engine to use the correct model
 - [x] Implementing a new Request Response system via pubsub
 - [x] Developing scripts for release automation and proper versioning
 - [x] Fixing runtimestate hitting ratelimits of managed models
+- [x] Implement a new chat service with dedicated API endpoints
+- [x] Add OpenAI SSE (Server-Sent Events) support for streaming responses
+- [x] Create a developer playground script for easier testing and environment setup
+- [x] Develop a Proof-of-Concept for a DSL visualizer in the legacy MVP frontend
 
 ### Scope Changes During Slice
 
@@ -76,43 +83,54 @@ The approach proved effective for managing complexity, though some features (lik
 - Task engine refactoring must be completed before major new features can be added
 - Permission model improvements needed for multi-user collaboration features
 
+## Effort Estimation
+- 190 and 230 hours
+- Core Refactoring: Migrating the entire engine from the monorepo.
+- New Repository Setup: Establishing the CI/CD, testing, and release automation for the new runtime repository from scratch.
+- Project Pivot: From all inclusive App to drop-in runtime.
+- Legacy Code Maintenance: Simultaneously adapting the old mvp repository to work with the new, external engine.
+
+## Unmet Goals
+- Deploy a GitHub PR reviewer: The strategic pivot to a standalone runtime engine deprioritized the deployment of specific, application-level features.
+
 ---
 
 ## July 2025 – Building a demo application
 
 ### Original Goals (Planned at Start)
 
-- Package a persona-chat application
-- Implement basic observability and UI dashboard
-- Add API rate limiting middleware
-- Implement chat moderation
-- Complete GitHub PR moderator functionality
+- ~~Package a persona-chat application~~
+- ~~Implement basic observability and UI dashboard~~ (*Deprecated*)
+- ~~Add API rate limiting middleware~~ (*Deprecated*)
+- Implement chat moderation capabilites
+- ~~Complete GitHub PR moderator functionality~~ (*Deprecated*)
 - Fix task-engine design issues
 - Improve permission model
-- Support multiple Telegram frontends via UI
+- ~~Support multiple Telegram frontends via UI~~ (*Deprecated*)
 
 ### Targeted Deliverables (Planned Outcomes)
 
 - Task Engine Enhancements: Improved system instruction handling and variable composition
 - Activity Logging: Delivery of tracking and visualization of system activity
-- GitHub Integration: Delivery of PR tracking functionality and initial frontend
-- Bot Routing Improvements: Enhanced routing logic for bot commands
+- ~~GitHub Integration: Delivery of PR tracking functionality and initial frontend~~ (*Deprecated*)
+- ~~Bot Routing Improvements: Enhanced routing logic for bot commands~~ (*Deprecated*)
 - Documentation Updates: Comprehensive documentation refresh to match current direction
 - Tokenizer Fixes: Addressing tokenizer interface issues
 
 ### Actual Deliverables (Completed Work)
 
-- [x] Basic Observability Integration & UI Dashboard
-- [x] API Rate Limiting Middleware
+- [x] Basic Observability Integration
+- [x] ~~UI Observability Dashboard~~ (*Deprecated*)
+- [x] ~~API Rate Limiting Middleware~~ (*Deprecated*)
 - [x] Implement Chat Moderation
-- [x] Declare multiple Telegram frontends via UI
-- [x] Activity tracking view improvements
+- [x] ~~Declare multiple Telegram frontends via UI~~ (*Deprecated*)
+- [x] ~~Activity tracking view improvements~~ (*Deprecated*)
 - [x] Token count bug fixes
-- [x] Keyword extraction feature
-- [x] GitHub PR Moderator (core functionality complete but needs final polish)
+- [x] ~~Keyword extraction feature~~ (*Deprecated*)
+- [x] ~~GitHub PR Moderator (core functionality complete but needs final polish)~~ (*Deprecated*)
 - [x] Fix Task-Engine design (refactoring planned for next slice)
 - [x] Add variable composition enhancements
-- [x] Integrated githubworker for PR handling
+- [x] ~~Integrated githubworker for PR handling~~ (*Deprecated*)
 - [x] Fix the ollama model-provider implementation
 
 ### Scope Changes During Slice
@@ -140,34 +158,35 @@ The approach proved effective for managing complexity, though some features (lik
 
 ### Original Goals (Planned at Start)
 
-- Package a chat application with persona support
-- Add user registration and task execution commands
+- ~~Package a chat application with persona support~~ (*Deprecated*)
+- ~~Add user registration~~ (*Deprecated*)
+- Implement task execution commands
 - Begin observability and release infrastructure
 
 ### Targeted Deliverables (Planned Outcomes)
 
-- RAG Implementation: Completed document retrieval and integration with LLM responses
+- ~~RAG Implementation: Completed document retrieval and integration with LLM responses~~ (*Deprecated*)
 - OpenAI-Compatible API: Added endpoints compatible with OpenAI's API format
-- Telegram Integration: Initial Telegram bot implementation with job queue system
+- ~~Telegram Integration: Initial Telegram bot implementation with job queue system~~ (*Deprecated*)
 - Gemini Integration: MVP implementation of Google Gemini provider
 - vLLM Integration: Added support for vLLM inference server
 - Testing Infrastructure: Comprehensive test suite for core components
 
 ### Actual Deliverables (Completed Work)
 
-- [x] RAG-Enhanced Chat Interface
+- [x] ~~RAG-Enhanced Chat Interface~~ (*Deprecated*)
 - [x] Chat with Task Command Execution Support
 - [x] Registration Route for Persona Chat Users
 - [x] OpenAI Driver Integration
 - [x] Gemini Driver Integration
 - [x] Release Infrastructure Setup
-- [x] Telegram Bot Integrations
+- [x] ~~Telegram Bot Integrations~~ (*Deprecated*)
 - [x] Simple OpenAI SDK-Compatible Chat Endpoint
 - [x] vLLM Integration
 - [x] Persisting Tasks
-- [x] Integration tests for dispatcher
-- [x] Worker authentication fixes
-- [x] Redesigned broker-worker architecture for improved async job handling
+- [x] ~~Integration tests for dispatcher~~ (*Deprecated*)
+- [x] ~~Worker authentication fixes~~ (*Deprecated*)
+- [x] ~~Redesigned broker-worker architecture for improved async job handling~~ (*Deprecated*)
 - [x] Prepare modelprovider to become a reusable library
 
 ### Scope Changes During Slice
@@ -188,30 +207,30 @@ The approach proved effective for managing complexity, though some features (lik
 
 ### Original Goals (Planned at Start)
 
-- Build a UI page for natural language document Q&A
+- ~~Build a UI page for natural language document Q&A~~ (*Deprecated*)
 - Prepare infrastructure for reusable prompt chains
 
 ### Targeted Deliverables (Planned Outcomes)
 
-- Job System: Implemented job queue system for processing background tasks
-- Files UI: Basic document management interface
-- Worker Infrastructure: Docker-compose integration for worker services
+- ~~Job System: Implemented job queue system for processing background tasks~~ (*Deprecated*)
+- ~~Files UI: Basic document management interface~~ (*Deprecated*)
+- ~~Worker Infrastructure: Docker-compose integration for worker services~~ (*Deprecated*)
 - Slice Planning Framework: Formalized development slice tracking system
 - Task Engine Foundation: Initial implementation of the task execution framework
 - Testing Improvements: Enhanced test coverage for document processing
 
 ### Actual Deliverables (Completed Work)
 
-- [x] Documents QA UI Page: Allows users to ask questions and get answers based on relevant documents
+- [x] ~~Documents QA UI Page: Allows users to ask questions and get answers based on relevant documents~~ (*Deprecated*)
 - [x] Prompt Execution Service: Executes prompts used by workers to chunk text
 - [x] Prompt Chain Service: Runs sequences of prompts for QA and automation workflows
-- [x] Filesystem Performance Improvements: Optimized slow file operations
+- [x] ~~Filesystem Performance Improvements: Optimized slow file operations~~ (*Deprecated*)
 - [x] OpenAPI Spec Review: Reviewed endpoints and began planning documentation
 - [x] Cleaning & Wiring: Ensured components were integrated and passing tests
-- [x] Python worker integration for document processing
-- [x] Resource type implementation for chunks
+- [x] ~~Python worker integration for document processing~~ (*Deprecated*)
+- [x] ~~Resource type implementation for chunks~~ (*Deprecated*)
 - [x] First implementation of the task engine
-- [x] Job cleanup logic implementation to prevent resource leaks
+- [x] ~~Job cleanup logic implementation to prevent resource leaks~~ (*Deprecated*)
 
 ### Scope Changes During Slice
 
@@ -232,37 +251,37 @@ The approach proved effective for managing complexity, though some features (lik
 
 ### Original Goals (Planned at Start)
 
-- Enable semantic search over embedded documents
+- ~~Enable semantic search over embedded documents~~ (*Deprecated*)
 - Improve backend pooling and model routing logic
 - Migrate tokenizer into a standalone service
-- Replace OpenSearch with Vald for vector search
+- ~~Replace OpenSearch with Vald for vector search~~ (*Deprecated*)
 
 ### Targeted Deliverables (Planned Outcomes)
 
 - Core Project Foundation: Initial project setup with MVP backend and admin-ui
 - CI Pipeline: Implemented Go core tests and basic continuous integration
-- Authentication System: JWT-based authentication with access control lists
-- Vector Store Integration: Vald vector database implementation replacing OpenSearch
-- Document Processing Pipeline: Initial document ingestion and indexing system
+- ~~Authentication System: JWT-based authentication with access control lists~~ (*Deprecated*)
+- ~~Vector Store Integration: Vald vector database implementation replacing OpenSearch~~ (*Deprecated*)
+- ~~Document Processing Pipeline: Initial document ingestion and indexing system~~ (*Deprecated*)
 - Testing Infrastructure: Basic test framework for core components
 
 ### Actual Deliverables (Completed Work)
 
-- [x] UI-Search Page: Developed to demo semantic search functionality
+- [x] ~~UI-Search Page: Developed to demo semantic search functionality~~ (*Deprecated*)
 - [x] Backend Pooling: Finalized implementation of backend pools/fleets
 - [x] Tokenizer Service Migration: Tokenizer logic moved to its own microservice
-- [x] Document Ingestion Pipeline:
-  - Python workers now parse and process documents from the filestore
-  - Embeddings are generated and ingested into Vald
-  - Replaced OpenSearch with Vald for better gRPC support and Go integration
+- [x] ~~Document Ingestion Pipeline:~~
+  - ~~Python workers now parse and process documents from the filestore~~
+  - ~~Embeddings are generated and ingested into Vald~~
+  - ~~Replaced OpenSearch with Vald for better gRPC support and Go integration~~ (*Deprecated*)
 - [x] LLM Resolver Enhancements:
   - Improved scoring system for selecting optimal backend/model
   - Routing policies now consider load, capabilities, and availability
 - [x] Fix wiring: Ensured previously built components worked end-to-end
 - [x] Testing & CI: Fixed failing tests and set up basic Continuous Integration
-- [x] Authentication layer implementation
+- [x] ~~Authentication layer implementation~~ (*Deprecated*)
 - [x] Activity tracking framework foundation
-- [x] Queue item leasing implementation for job reliability
+- [x] ~~Queue item leasing implementation for job reliability~~ (*Deprecated*)
 
 ### Scope Changes During Slice
 
@@ -303,11 +322,11 @@ The approach proved effective for managing complexity, though some features (lik
 - [x] Core Go Server Implementation
 - [x] PostgreSQL Integration
 - [x] Initial Task Engine Prototype
-- [x] React Admin UI Skeleton
+- [x] ~~React Admin UI Skeleton~~ (*Deprecated*)
 - [x] Enhanced CI/CD Pipeline
 - [x] LLM API Routing Framework
-- [x] Basic Authentication System
-- [x] Initial File Storage System
+- [x] ~~Basic Authentication System~~ (*Deprecated*)
+- [x] ~~Initial File Storage System~~ (*Deprecated*)
 - [x] Pub/Sub implementation for event-driven communication
 - [x] Task engine skeleton implementation
 - [x] Health checks for backend services and initial infrastructure setup
