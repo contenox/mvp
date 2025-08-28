@@ -62,7 +62,7 @@ The approach proved effective for managing complexity, though some features (lik
 - [x] Address breaking changes from Ollama-APIs and model behavior
 - [x] Exanding E2E and compatibility testing
 - [x] Improving the llmrepo and model provider management
-- [x] ~~Implementing Workflow visualization and fixing UX issues~~ (*Deprecated*)
+- [x] ~~Fix UX and UI integration issues~~ (*Deprecated*)
 - [x] Improving the llmresolver and fixing the engine to use the correct model
 - [x] Implementing a new Request Response system via pubsub
 - [x] Developing scripts for release automation and proper versioning
@@ -70,7 +70,8 @@ The approach proved effective for managing complexity, though some features (lik
 - [x] Implement a new chat service with dedicated API endpoints
 - [x] Add OpenAI SSE (Server-Sent Events) support for streaming responses
 - [x] Create a developer playground script for easier testing and environment setup
-- [x] Develop a Proof-of-Concept for a DSL visualizer in the legacy MVP frontend
+- [x] ~~Develop a Proof-of-Concept for a DSL visualizer in the legacy MVP frontend~~ (*Deprecated*)
+- [x] Integrate & test open Web-UI as chat-client interface for the OpenAI completion endpoints
 
 ### Scope Changes During Slice
 
