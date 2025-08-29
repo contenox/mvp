@@ -19,14 +19,14 @@ The approach proved effective for managing complexity, though some features (lik
 
 ## For Future Slices (Planned)
 
-  - Production Capabilities
-  - Complete permission model improvements
-  - Implement shared chat sessions
-  - Exportable conversation transcripts
-  - Model fine-tuning management
-  - MCP compatibility implementation
-  - Fix the openai model-provider implementation
-  - Implement a custom model gateway to allow elastic scaling
+- Production Capabilities
+- Complete permission model improvements
+- Implement shared chat sessions
+- Exportable conversation transcripts
+- Model fine-tuning management
+- MCP compatibility implementation
+- Fix the openai model-provider implementation
+- Implement a custom model gateway to allow elastic scaling
 
 ---
 
@@ -272,12 +272,12 @@ The approach proved effective for managing complexity, though some features (lik
 - [x] Backend Pooling: Finalized implementation of backend pools/fleets
 - [x] Tokenizer Service Migration: Tokenizer logic moved to its own microservice
 - [x] ~~Document Ingestion Pipeline:~~
-  - ~~Python workers now parse and process documents from the filestore~~
-  - ~~Embeddings are generated and ingested into Vald~~
-  - ~~Replaced OpenSearch with Vald for better gRPC support and Go integration~~ (*Deprecated*)
+- ~~Python workers now parse and process documents from the filestore~~
+- ~~Embeddings are generated and ingested into Vald~~
+- ~~Replaced OpenSearch with Vald for better gRPC support and Go integration~~ (*Deprecated*)
 - [x] LLM Resolver Enhancements:
-  - Improved scoring system for selecting optimal backend/model
-  - Routing policies now consider load, capabilities, and availability
+- Improved scoring system for selecting optimal backend/model
+- Routing policies now consider load, capabilities, and availability
 - [x] Fix wiring: Ensured previously built components worked end-to-end
 - [x] Testing & CI: Fixed failing tests and set up basic Continuous Integration
 - [x] ~~Authentication layer implementation~~ (*Deprecated*)
