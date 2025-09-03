@@ -42,6 +42,7 @@ The approach proved effective for managing complexity, though some features (lik
     - with necessary pages to expose billing relevant metrics
     - with a page to connect the Github-PR-reviewer to users repositories
     - build a checkout page for users to purchase the service
+
 ## August 2025 – Task Engine Refinement & Live Deployment
 
 ### Original Goals (Planned at Start)
