@@ -30,6 +30,18 @@ The approach proved effective for managing complexity, though some features (lik
 
 ---
 
+## September 2025 – Leveraging the Ecosystem
+
+### Original Goals (Planned at Start)
+- Refactor the modelprovider into a own server exposing an OpenAI-compatible API
+- Refactor the Hooks-Protocol into OpenAI-compatible Tool-Calling
+- Building demos with integrations to existing UIs, services and platforms, like Libre Chat
+- Build a GitHub PR reviewer Tool Server
+- Build Workflows using the Runtime and deploy an internal PR-review bot instance
+- Build a new SaaS WebApp
+    - with necessary pages to expose billing relevant metrics
+    - with a page to connect the Github-PR-reviewer to users repositories
+    - build a checkout page for users to purchase the service
 ## August 2025 – Task Engine Refinement & Live Deployment
 
 ### Original Goals (Planned at Start)
